@@ -117,8 +117,8 @@ configured to be compatible with these instructions as of May 16, 2018.
 
     This software is provided "as-is" without any guarantees or warranty of any
     kind and knowledge of the Python progamming language may be necessary for use.
-    Furthermore, the documentation (above) for this software may be incomplete
-    or out of date.
+    Furthermore, the documentation (above) for this software may be incomplete,
+    inaccurate, or out of date, and is provided for information only.
 
 =======================================
 """
