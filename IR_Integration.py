@@ -127,6 +127,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import csv
 
+__author__ = "Szymon Koszarek"
+__email__ = "koszare2@illinois.edu"
+
 
 """
 ############################################
@@ -196,8 +199,3 @@ with open(saveFile, 'w', newline='') as csvfile:
 #     print("\t%s" % headers[i])
 #     print(integral(3050, 3725)[i])
 #     print(integral(1550, 1775)[i])
-
-"""
-__author__ = "Szymon Koszarek"
-__email__ = "koszare2@illinois.edu"
-"""
