@@ -124,7 +124,6 @@ configured to be compatible with these instructions as of May 16, 2018.
 """
 
 import numpy as np
-import matplotlib.pyplot as plt
 import csv
 
 __author__ = "Szymon Koszarek"
