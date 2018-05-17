@@ -1,3 +1,39 @@
+"""
+This code is used to find the area under the curve between two integration bounds.
+It is specifically written for the Guironnet Lab at the University of Illinois
+for use with the IR spectrometer and the Opus 7.5 spectroscopy software.
+
+Below is a description of how to use it. Select computers in the lab are pre-
+configured to be compatible with these instructions as of May 16, 2018.
+
+
+1.  PLUG-AND-PLAY USE:
+
+    1.1     Open the command prompt
+            Click 'Start' and type 'cmd' into the 'Search programs and files' field
+
+    1.2     Navigate to the 'GuironnetGroup' folder using the 'cd' command.
+            This folder should be on the Desktop, but may be elsewhere.
+
+            $ cd Desktop/GuironnetGroup
+
+            NOTE: The 'cd' command will not work on all Windows machines because
+            it is a Unix command. Select lab computers have been configured such
+            that this command (and other Unix commands, including 'ls') will work on them.
+
+
+    1.3     Get the latest copy of the code by running the command below.
+
+            $ git pull
+
+    1.4     Run the code using this command. The program assumes that a correctly
+            formatted file named 'data.csv' exists. It will create a new file
+            titled 'result.csv'
+
+            $ python IR_Integration.py
+
+"""
+
 import numpy as np
 import matplotlib.pyplot as plt
 import csv
@@ -34,7 +70,7 @@ def integral(lb, ub):
     idxMin = find_nearest(data[:,0],lb)
     idxMax = find_nearest(data[:,0],ub)
 
-    #print(data[idxMin,0],data[idxMax,0])
+    # print(data[idxMin,0],data[idxMax,0])
 
     result = (data[idxMax+1:idxMin,1:] + data[idxMax:idxMin-1,1:])/2
     result = np.multiply(np.transpose(result),(data[idxMax:idxMin-1,0] - data[idxMax+1:idxMin,0]))
@@ -46,7 +82,7 @@ resultArr = np.zeros((len(intRanges), len(headers)))
 for j in range(len(intRanges)):
     resultArr[j,:] = integral(intRanges[j][0],intRanges[j][1])
 
-"Writes integration results into the output CSV file"
+## Writes integration results into the output CSV file
 with open(saveFile, 'w', newline='') as csvfile:
     writer = csv.writer(csvfile, delimiter=',', quoting=csv.QUOTE_NONE)
     writer.writerow(headers)
