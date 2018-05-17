@@ -9,7 +9,7 @@ configured to be compatible with these instructions as of May 16, 2018.
 
 1.  PLUG-AND-PLAY USE:
 
-    1.1     Open the command prompt
+    1.1     Open the command prompt.
             Click start and type 'cmd' into the 'Search programs and files' field
 
     1.2     Navigate to the 'GuironnetGroup' folder using the 'cd' command.
