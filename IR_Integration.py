@@ -25,6 +25,16 @@ configured to be compatible with these instructions as of May 16, 2018.
 
             $ git pull
 
+            1.3.1   If the above command fails, it is likely that the local
+                    version of the file differs from the Github version. To
+                    override this and to overwrite the local copy with the Github
+                    version, run the commands below.
+
+                    WARNING: Any local changes to the file will be lost.
+
+                    $ git fetch
+                    $ git checkout IR_Integration.py
+
     1.4     Run the code using this command. The program assumes that a correctly
             formatted file named 'data.csv' exists (see Section 2). It will create
             a new file titled 'result.csv'.
