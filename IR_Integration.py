@@ -9,7 +9,7 @@ configured to be compatible with these instructions as of May 16, 2018.
 
 1.  PLUG-AND-PLAY USE:
 
-    1.1     Open the command prompt.
+    1.1     Open the command prompt
             Click start and type 'cmd' into the 'Search programs and files' field
 
     1.2     Navigate to the 'GuironnetGroup' folder using the 'cd' command.
@@ -33,7 +33,12 @@ configured to be compatible with these instructions as of May 16, 2018.
                     WARNING: Any local changes to the file will be lost.
 
                     $ git fetch
-                    $ git checkout IR_Integration.py
+                    $ git checkout origin/master IR_Integration.py
+
+                    OR
+
+                    $ git checkout
+                    $ git pull
 
     1.4     Run the code using this command. The program assumes that a correctly
             formatted file named 'data.csv' exists (see Section 2). It will create
