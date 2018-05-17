@@ -10,7 +10,7 @@ configured to be compatible with these instructions as of May 16, 2018.
 1.  PLUG-AND-PLAY USE:
 
     1.1     Open the command prompt
-            Click 'Start' and type 'cmd' into the 'Search programs and files' field
+            Click start and type 'cmd' into the 'Search programs and files' field
 
     1.2     Navigate to the 'GuironnetGroup' folder using the 'cd' command.
             This folder should be on the Desktop, but may be elsewhere.
@@ -21,16 +21,34 @@ configured to be compatible with these instructions as of May 16, 2018.
             it is a Unix command. Select lab computers have been configured such
             that this command (and other Unix commands, including 'ls') will work on them.
 
-
     1.3     Get the latest copy of the code by running the command below.
 
             $ git pull
 
     1.4     Run the code using this command. The program assumes that a correctly
-            formatted file named 'data.csv' exists. It will create a new file
-            titled 'result.csv'
+            formatted file named 'data.csv' exists (see Section 2). It will create
+            a new file titled 'result.csv'.
 
             $ python IR_Integration.py
+
+
+2.  INPUT DATA FILE FORMATTING
+
+    There must be a .CSV (Comma-separated Value) file containing the spectroscopy
+    data which satisfies the following criteria:
+
+    -   The first row is the header row. Sample IDs go here with the corresponding
+        data in the rows below.
+    -   The first column contains the x-values (wavenumbers or wavelengths)
+    -   Every columns thereafter is a dataset
+    -   Every dataset in the file must be of the same size
+    -   For each dataset, there must be one data point for each x-value.
+    -   Cell A1 may be left empty
+
+    CSV files can be created in Microsoft Excel.
+    -   Click File -> Save as
+    -   In the 'File Format' or 'Save as type' list, select the .csv file type,
+        which might look something like 'CSV UTF-8 (.csv)'
 
 """
 
