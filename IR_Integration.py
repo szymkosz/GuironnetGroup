@@ -19,8 +19,9 @@ configured to be compatible with these instructions as of May 16, 2018.
                 $ cd Desktop/GuironnetGroup
 
             NOTE: The 'cd' command will not work on all Windows machines because
-            it is a Unix command. Select lab computers have been configured such
-            that this command (and other Unix commands, including 'ls') will work on them.
+            it is a Unix (Mac and Linux) command. Select lab computers have been
+            configured such that this command (and other Unix commands, including
+            'ls') will work on them.
 
     1.3     Get the latest copy of the code by running the command below.
 
