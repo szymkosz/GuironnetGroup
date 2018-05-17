@@ -6,8 +6,9 @@ for use with the IR spectrometer and the Opus 7.5 spectroscopy software.
 Below is a description of how to use it. Select computers in the lab are pre-
 configured to be compatible with these instructions as of May 16, 2018.
 
-
+=======================================
 1.  PLUG-AND-PLAY USE:
+=======================================
 
     1.1     Open the command prompt.
             Click start and type 'cmd' into the 'Search programs and files' field
@@ -47,7 +48,9 @@ configured to be compatible with these instructions as of May 16, 2018.
                 $ python IR_Integration.py
 
 
+=======================================
 2.  INPUT DATA FILE FORMATTING
+=======================================
 
     There must be a .CSV (Comma-separated Value) file containing the spectroscopy
     data which satisfies the following criteria:
@@ -65,11 +68,70 @@ configured to be compatible with these instructions as of May 16, 2018.
     -   In the 'File Format' or 'Save as type' list, select the .csv file type,
         which might look something like 'CSV UTF-8 (.csv)'
 
+
+=======================================
+3.  USER-CUSTOMIZABILITY
+=======================================
+
+    Some aspects of the code can be changed without breaking it. This includes
+    the input and output file names and the integration bounds.
+
+    The output file will overwrite any file
+    with the same name without any other warning.
+
+    3.1     Input File Name
+             -> stored as the variable, fileName
+
+            -   Must keep the '.csv' file type as part of the file name
+            -   Must exist in the current working directory (current folder)
+            -   Must be formatted correctly (see Section 2)
+
+    3.2     Output File Name
+             -> stored as the variable, saveFile
+
+            -   Must keep the '.csv' file type as part of the file name
+
+            WARNING: The output file will overwrite any file with the same name
+                     in the current working directory (current folder)
+
+    3.3     Integration Bounds
+             -> stored in the variable, intRanges
+
+            -   Must be a python list of 2-tuples of the values of the
+                boundaries over which to integrate
+            -   The values must exist in the x-values column
+
+            Below are examples of acceptable values for intRanges, assuming the
+            integration bounds exist in the dataset in question.
+
+                intRanges = [(3050, 3725),
+                             (1550, 1775)]
+
+                intRanges = [(3050, 3725), (1550, 1775)]
+
+
+=======================================
+4.  DISCLAIMER
+=======================================
+
+    This software is provided "as-is" without any guarantees or warranty of any
+    kind and knowledge of the Python progamming language may be necessary for use.
+    Furthermore, the documentation (above) for this software may be incomplete
+    or out of date.
+
+=======================================
 """
 
 import numpy as np
 import matplotlib.pyplot as plt
 import csv
+
+
+"""
+############################################
+###        CUSTOMIZABLE VARIABLES        ###
+############################################
+"""
 
 ## Source and output file names
 fileName = "data.csv"
@@ -77,7 +139,15 @@ saveFile = "result.csv"     ### This will overwrite any identically-named file
 
 ## List of tuples containing integration bounds
 intRanges = [(3050, 3725),
-            (1550, 1775)]
+             (1550, 1775)]
+
+
+
+"""
+############################################
+###      DO NOT EDIT THE CODE BELOW      ###
+############################################
+"""
 
 ## Reads data in from the input file
 with open(fileName, 'r') as file:
@@ -125,3 +195,8 @@ with open(saveFile, 'w', newline='') as csvfile:
 #     print("\t%s" % headers[i])
 #     print(integral(3050, 3725)[i])
 #     print(integral(1550, 1775)[i])
+
+"""
+__author__ = "Szymon Koszarek"
+__email__ = "koszare2@illinois.edu"
+"""
