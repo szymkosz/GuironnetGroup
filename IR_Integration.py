@@ -9,13 +9,13 @@ configured to be compatible with these instructions as of May 16, 2018.
 
 1.  PLUG-AND-PLAY USE:
 
-    1.1     Open the command prompt
+    1.1     Open the command prompt.
             Click start and type 'cmd' into the 'Search programs and files' field
 
     1.2     Navigate to the 'GuironnetGroup' folder using the 'cd' command.
             This folder should be on the Desktop, but may be elsewhere.
 
-            $ cd Desktop/GuironnetGroup
+                $ cd Desktop/GuironnetGroup
 
             NOTE: The 'cd' command will not work on all Windows machines because
             it is a Unix command. Select lab computers have been configured such
@@ -23,28 +23,28 @@ configured to be compatible with these instructions as of May 16, 2018.
 
     1.3     Get the latest copy of the code by running the command below.
 
-            $ git pull
+                $ git pull
 
             1.3.1   If the above command fails, it is likely that the local
                     version of the file differs from the Github version. To
                     override this and to overwrite the local copy with the Github
-                    version, run the commands below.
+                    version, run one of the pairs of commands below.
 
                     WARNING: Any local changes to the file will be lost.
 
-                    $ git fetch
-                    $ git checkout origin/master IR_Integration.py
+                        $ git fetch
+                        $ git checkout origin/master IR_Integration.py
 
                     OR
 
-                    $ git checkout
-                    $ git pull
+                        $ git checkout IR_Integration.py
+                        $ git pull
 
     1.4     Run the code using this command. The program assumes that a correctly
             formatted file named 'data.csv' exists (see Section 2). It will create
             a new file titled 'result.csv'.
 
-            $ python IR_Integration.py
+                $ python IR_Integration.py
 
 
 2.  INPUT DATA FILE FORMATTING
@@ -55,9 +55,9 @@ configured to be compatible with these instructions as of May 16, 2018.
     -   The first row is the header row. Sample IDs go here with the corresponding
         data in the rows below.
     -   The first column contains the x-values (wavenumbers or wavelengths)
-    -   Every columns thereafter is a dataset
+    -   Every column thereafter is a dataset
     -   Every dataset in the file must be of the same size
-    -   For each dataset, there must be one data point for each x-value.
+    -   In each dataset, there must be one data point for each x-value.
     -   Cell A1 may be left empty
 
     CSV files can be created in Microsoft Excel.
@@ -97,9 +97,7 @@ def find_nearest(arr, val):
 "Integrates data over the bound"
 def integral(lb, ub):
     if ub < lb:
-        temp = lb
-        lb = ub
-        ub = temp
+        lb, ub = ub, lb
     idxMin = find_nearest(data[:,0],lb)
     idxMax = find_nearest(data[:,0],ub)
 
